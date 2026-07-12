@@ -3,21 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>nmmnt. — video &amp; foto production</title>
-    <meta name="description" content="nmmnt. — filmová a fotografická produkce. Svatby, eventy, komerční projekty.">
+    <title>nmmnt. — svatební video &amp; foto</title>
+    <meta name="description" content="nmmnt. — svatební video a foto produkce. Robin a Kateřina. Dva pohledy. Jeden příběh.">
 
-    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
-
     <style>
-        /* ============================================
-           FONTS
-           ============================================ */
         @font-face
         {
             font-family: 'GopherText';
@@ -27,9 +20,6 @@
             font-display: swap;
         }
 
-        /* ============================================
-           VARIABLES
-           ============================================ */
         :root
         {
             --color-primary: #5c1af5;
@@ -50,22 +40,9 @@
             --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        /* ============================================
-           RESET
-           ============================================ */
-        *, *::before, *::after
-        {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
-        html
-        {
-            font-size: 16px;
-            scroll-behavior: smooth;
-            -webkit-font-smoothing: antialiased;
-        }
+        html { font-size: 16px; scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
 
         body
         {
@@ -77,46 +54,18 @@
             overflow-x: hidden;
         }
 
-        a
-        {
-            color: inherit;
-            text-decoration: none;
-        }
-
-        img
-        {
-            max-width: 100%;
-            height: auto;
-            display: block;
-        }
-
+        a { color: inherit; text-decoration: none; }
+        img { max-width: 100%; height: auto; display: block; }
         ul { list-style: none; }
+        button { border: none; background: none; cursor: pointer; font-family: inherit; color: inherit; }
 
-        button
-        {
-            border: none;
-            background: none;
-            cursor: pointer;
-            font-family: inherit;
-            color: inherit;
-        }
-
-        /* ============================================
-           HEADER
-           ============================================ */
+        /* HEADER */
         #header
         {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: var(--header-height);
-            z-index: 1000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 0 24px;
-            transition: background 0.4s ease;
+            position: fixed; top: 0; left: 0; width: 100%;
+            height: var(--header-height); z-index: 1000;
+            display: flex; align-items: center; justify-content: center;
+            padding: 0 24px; transition: background 0.4s ease;
         }
 
         #header.scrolled
@@ -126,266 +75,147 @@
             -webkit-backdrop-filter: blur(20px);
         }
 
-        /* Logo — centered */
         .header-logo
         {
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            font-family: var(--font-heading);
-            font-weight: 800;
-            font-size: 26px;
-            color: var(--color-primary);
-            letter-spacing: -0.02em;
-            z-index: 2;
+            position: absolute; left: 50%; transform: translateX(-50%);
+            font-family: var(--font-heading); font-weight: 800; font-size: 26px;
+            color: var(--color-primary); letter-spacing: -0.02em; z-index: 2;
         }
 
-        /* Menu toggle — left */
         .menu-toggle
         {
-            position: absolute;
-            left: 24px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 13px;
-            font-weight: 500;
-            letter-spacing: 0.06em;
-            text-transform: uppercase;
-            color: var(--color-text);
-            z-index: 2;
+            position: absolute; left: 24px;
+            display: flex; align-items: center; gap: 8px;
+            font-size: 13px; font-weight: 500; letter-spacing: 0.06em;
+            text-transform: uppercase; color: var(--color-text); z-index: 2;
             transition: color 0.3s ease;
         }
 
-        .menu-toggle:hover
-        {
-            color: var(--color-primary);
-        }
+        .menu-toggle:hover { color: var(--color-primary); }
 
         .menu-toggle-icon
         {
-            display: flex;
-            flex-direction: column;
-            gap: 4px;
-            width: 22px;
+            display: flex; flex-direction: column; gap: 4px; width: 22px;
         }
 
         .menu-toggle-icon span
         {
-            display: block;
-            height: 2px;
-            background: currentColor;
-            border-radius: 2px;
-            transition: transform 0.3s ease, opacity 0.3s ease, width 0.3s ease;
+            display: block; height: 2px; background: currentColor;
+            border-radius: 2px; transition: transform 0.3s ease, opacity 0.3s ease, width 0.3s ease;
         }
 
-        .menu-toggle-icon span:nth-child(2)
-        {
-            width: 16px;
-        }
+        .menu-toggle-icon span:nth-child(2) { width: 16px; }
 
-        .menu-toggle.open .menu-toggle-icon span:nth-child(1)
-        {
-            transform: translateY(6px) rotate(45deg);
-        }
+        .menu-toggle.open .menu-toggle-icon span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+        .menu-toggle.open .menu-toggle-icon span:nth-child(2) { opacity: 0; }
+        .menu-toggle.open .menu-toggle-icon span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
 
-        .menu-toggle.open .menu-toggle-icon span:nth-child(2)
-        {
-            opacity: 0;
-        }
-
-        .menu-toggle.open .menu-toggle-icon span:nth-child(3)
-        {
-            transform: translateY(-6px) rotate(-45deg);
-        }
-
-        /* Lang — right */
         .header-lang
         {
-            position: absolute;
-            right: 24px;
-            display: flex;
-            gap: 6px;
-            font-size: 12px;
-            font-weight: 500;
-            letter-spacing: 0.06em;
-            z-index: 2;
+            position: absolute; right: 24px;
+            display: flex; gap: 6px; font-size: 12px;
+            font-weight: 500; letter-spacing: 0.06em; z-index: 2;
         }
 
-        .header-lang a
-        {
-            color: var(--color-gray);
-            transition: color 0.3s ease;
-        }
+        .header-lang a { color: var(--color-gray); transition: color 0.3s ease; }
+        .header-lang a.active { color: var(--color-text); }
+        .header-lang a:hover { color: var(--color-primary); }
+        .header-lang span { color: var(--color-gray); }
 
-        .header-lang a.active
-        {
-            color: var(--color-text);
-        }
-
-        .header-lang a:hover
-        {
-            color: var(--color-primary);
-        }
-
-        .header-lang span
-        {
-            color: var(--color-gray);
-        }
-
-        /* ============================================
-           DROPDOWN MENU
-           ============================================ */
+        /* DROPDOWN MENU */
         .dropdown-menu
         {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100vh;
+            position: fixed; top: 0; left: 0; width: 100%; height: 100vh;
             background: rgba(251, 242, 207, 0.97);
-            backdrop-filter: blur(30px);
-            -webkit-backdrop-filter: blur(30px);
-            z-index: 999;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            visibility: hidden;
+            backdrop-filter: blur(30px); -webkit-backdrop-filter: blur(30px);
+            z-index: 999; display: flex; align-items: center; justify-content: center;
+            opacity: 0; visibility: hidden;
             transition: opacity 0.5s var(--ease-out), visibility 0.5s;
         }
 
-        .dropdown-menu.open
-        {
-            opacity: 1;
-            visibility: visible;
-        }
+        .dropdown-menu.open { opacity: 1; visibility: visible; }
 
         .dropdown-menu nav ul
         {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 24px;
+            display: flex; flex-direction: column; align-items: center; gap: 24px;
         }
 
         .dropdown-menu nav a
         {
-            font-family: var(--font-heading);
-            font-weight: 800;
-            font-size: clamp(32px, 6vw, 52px);
-            color: var(--color-text);
-            letter-spacing: -0.01em;
-            transition: color 0.3s ease;
+            font-family: var(--font-heading); font-weight: 800;
+            font-size: clamp(32px, 6vw, 52px); color: var(--color-text);
+            letter-spacing: -0.01em; transition: color 0.3s ease;
         }
 
-        .dropdown-menu nav a:hover
-        {
-            color: var(--color-primary);
-        }
+        .dropdown-menu nav a:hover { color: var(--color-primary); }
 
         .dropdown-menu .menu-socials
         {
-            position: absolute;
-            bottom: 48px;
-            display: flex;
-            gap: 32px;
+            position: absolute; bottom: 48px; display: flex; gap: 32px;
         }
 
         .dropdown-menu .menu-socials a
         {
-            font-size: 14px;
-            font-weight: 400;
-            color: var(--color-gray);
+            font-size: 14px; font-weight: 400; color: var(--color-gray);
         }
 
-        .dropdown-menu .menu-socials a:hover
-        {
-            color: var(--color-primary);
-        }
+        .dropdown-menu .menu-socials a:hover { color: var(--color-primary); }
 
-        /* ============================================
-           HERO — STICKY FULLSCREEN VIDEO
-           ============================================ */
-        .hero-wrap
-        {
-            position: relative;
-            height: 200vh; /* scroll distance before content overlaps */
-        }
+        /* HERO */
+        .hero-wrap { position: relative; height: 200vh; }
 
         .hero
         {
-            position: sticky;
-            top: 0;
-            width: 100%;
-            height: 100vh;
-            overflow: hidden;
+            position: sticky; top: 0; width: 100%; height: 100vh; overflow: hidden;
         }
 
-        .hero-video
-        {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
+        .hero-video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
 
         .hero-video iframe
         {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 177.78vh;
-            height: 100vh;
-            min-width: 100%;
-            min-height: 56.25vw;
+            position: absolute; top: 50%; left: 50%;
+            width: 177.78vh; height: 100vh;
+            min-width: 100%; min-height: 56.25vw;
             transform: translate(-50%, -50%);
             pointer-events: none;
         }
 
         .hero-overlay
         {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(
-                to bottom,
-                rgba(10, 10, 10, 0.15) 0%,
-                rgba(10, 10, 10, 0.05) 50%,
-                rgba(10, 10, 10, 0.3) 100%
-            );
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(to bottom,
+                rgba(10,10,10,0.15) 0%, rgba(10,10,10,0.05) 50%, rgba(10,10,10,0.3) 100%);
             z-index: 1;
         }
 
         .hero-content
         {
-            position: absolute;
-            bottom: 80px;
-            left: 50%;
-            transform: translateX(-50%);
-            text-align: center;
-            z-index: 2;
+            position: absolute; bottom: 80px; left: 50%;
+            transform: translateX(-50%); text-align: center; z-index: 2;
+        }
+
+        .hero-tagline
+        {
+            font-family: var(--font-heading); font-weight: 800;
+            font-size: clamp(24px, 4vw, 42px); color: var(--color-white);
+            letter-spacing: -0.01em; margin-bottom: 8px;
+            text-shadow: 0 2px 20px rgba(0,0,0,0.3);
+        }
+
+        .hero-sub
+        {
+            font-size: 14px; font-weight: 300; color: rgba(255,255,255,0.7);
+            letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 32px;
         }
 
         .hero-scroll-hint
         {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 8px;
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 12px;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
+            display: flex; flex-direction: column; align-items: center; gap: 8px;
+            color: rgba(255,255,255,0.7); font-size: 12px;
+            letter-spacing: 0.1em; text-transform: uppercase;
         }
 
-        .hero-scroll-hint svg
-        {
-            animation: scrollBounce 2s ease-in-out infinite;
-        }
+        .hero-scroll-hint svg { animation: scrollBounce 2s ease-in-out infinite; }
 
         @keyframes scrollBounce
         {
@@ -393,153 +223,190 @@
             50% { transform: translateY(6px); }
         }
 
-        /* ============================================
-           CONTENT — slides over video
-           ============================================ */
-        .content
-        {
-            position: relative;
-            z-index: 10;
-            background: var(--color-bg);
-        }
+        /* CONTENT */
+        .content { position: relative; z-index: 10; background: var(--color-bg); }
 
-        /* Curved top edge */
         .content::before
         {
-            content: '';
-            position: absolute;
-            top: -60px;
-            left: 0;
-            width: 100%;
-            height: 60px;
-            background: var(--color-bg);
+            content: ''; position: absolute; top: -60px; left: 0;
+            width: 100%; height: 60px; background: var(--color-bg);
             border-radius: 50% 50% 0 0 / 100% 100% 0 0;
         }
 
         .section-inner
         {
-            max-width: var(--inner-max);
-            margin: 0 auto;
+            max-width: var(--inner-max); margin: 0 auto;
             padding: var(--section-padding);
         }
 
-        /* ============================================
-           SECTION TYPOGRAPHY
-           ============================================ */
         .section-label
         {
-            font-size: 12px;
-            font-weight: 600;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-            color: var(--color-primary);
-            margin-bottom: 12px;
+            font-size: 12px; font-weight: 600; letter-spacing: 0.15em;
+            text-transform: uppercase; color: var(--color-primary); margin-bottom: 12px;
         }
 
         .section-title
         {
-            font-family: var(--font-heading);
-            font-weight: 800;
-            font-size: clamp(28px, 4.5vw, 48px);
-            line-height: 1.2;
-            color: var(--color-text);
-            margin-bottom: 20px;
-            letter-spacing: -0.01em;
+            font-family: var(--font-heading); font-weight: 800;
+            font-size: clamp(28px, 4.5vw, 48px); line-height: 1.2;
+            color: var(--color-text); margin-bottom: 20px; letter-spacing: -0.01em;
         }
 
         .section-desc
         {
-            font-size: clamp(15px, 1.6vw, 17px);
-            font-weight: 300;
-            line-height: 1.9;
-            color: var(--color-text-light);
-            max-width: 600px;
-            margin-bottom: 56px;
+            font-size: clamp(15px, 1.6vw, 17px); font-weight: 300;
+            line-height: 1.9; color: var(--color-text-light);
+            max-width: 640px; margin-bottom: 56px;
         }
 
-        /* ============================================
-           ABOUT
-           ============================================ */
+        /* ABOUT */
         .about-grid
         {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 64px;
-            align-items: start;
+            display: grid; grid-template-columns: 1fr 1fr;
+            gap: 64px; align-items: start;
         }
 
         .about-text p
         {
-            font-size: 16px;
-            font-weight: 300;
-            line-height: 1.9;
-            color: var(--color-text-light);
-            margin-bottom: 20px;
+            font-size: 16px; font-weight: 300; line-height: 1.9;
+            color: var(--color-text-light); margin-bottom: 20px;
         }
 
-        .about-team
-        {
-            display: flex;
-            gap: 32px;
-        }
+        .about-team { display: flex; gap: 32px; }
 
-        .team-member
-        {
-            text-align: center;
-            flex: 1;
-        }
+        .team-member { text-align: center; flex: 1; }
 
         .team-photo
         {
-            width: 140px;
-            height: 140px;
-            border-radius: 50%;
-            overflow: hidden;
-            margin: 0 auto 14px;
-            background: var(--color-bg-dark);
+            width: 140px; height: 140px; border-radius: 50%;
+            overflow: hidden; margin: 0 auto 14px; background: var(--color-bg-dark);
         }
 
-        .team-photo img
-        {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
+        .team-photo img { width: 100%; height: 100%; object-fit: cover; }
 
         .team-member h5
         {
-            font-family: var(--font-heading);
-            font-weight: 800;
-            font-size: 17px;
-            margin-bottom: 2px;
+            font-family: var(--font-heading); font-weight: 800;
+            font-size: 17px; margin-bottom: 2px;
         }
 
-        .team-member span
+        .team-member span { font-size: 13px; color: var(--color-gray); }
+
+        /* PRICING */
+        .sec-pricing { border-top: 1px solid rgba(0,0,0,0.06); }
+
+        .pricing-grid
         {
-            font-size: 13px;
-            color: var(--color-gray);
+            display: grid; grid-template-columns: repeat(3, 1fr);
+            gap: 24px; align-items: stretch;
         }
 
-        /* ============================================
-           PORTFOLIO — VIDEO
-           ============================================ */
-        .sec-portfolio
+        .pricing-card
         {
-            border-top: 1px solid rgba(0, 0, 0, 0.06);
+            background: var(--color-white); border-radius: 14px;
+            padding: 36px 28px; display: flex; flex-direction: column;
+            transition: transform 0.4s var(--ease-out), box-shadow 0.4s ease;
         }
+
+        .pricing-card:hover
+        {
+            transform: translateY(-4px);
+            box-shadow: 0 16px 48px rgba(92, 26, 245, 0.08);
+        }
+
+        .pricing-card.featured
+        {
+            background: var(--color-primary); color: var(--color-white);
+        }
+
+        .pricing-card.featured .pricing-label,
+        .pricing-card.featured .pricing-price,
+        .pricing-card.featured .pricing-list li
+        {
+            color: var(--color-white);
+        }
+
+        .pricing-card.featured .pricing-list li::before
+        {
+            color: rgba(255,255,255,0.6);
+        }
+
+        .pricing-card.featured .pricing-cta
+        {
+            background: var(--color-white); color: var(--color-primary);
+        }
+
+        .pricing-card.featured .pricing-cta:hover
+        {
+            background: var(--color-bg);
+        }
+
+        .pricing-label
+        {
+            font-size: 11px; font-weight: 600; letter-spacing: 0.12em;
+            text-transform: uppercase; color: var(--color-primary); margin-bottom: 8px;
+        }
+
+        .pricing-name
+        {
+            font-family: var(--font-heading); font-weight: 800;
+            font-size: 22px; margin-bottom: 6px;
+        }
+
+        .pricing-price
+        {
+            font-size: 28px; font-weight: 600; color: var(--color-text);
+            margin-bottom: 24px;
+        }
+
+        .pricing-price small
+        {
+            font-size: 14px; font-weight: 400; opacity: 0.6;
+        }
+
+        .pricing-list
+        {
+            flex: 1; margin-bottom: 28px;
+        }
+
+        .pricing-list li
+        {
+            font-size: 14px; line-height: 1.7; color: var(--color-text-light);
+            padding: 4px 0 4px 20px; position: relative;
+        }
+
+        .pricing-list li::before
+        {
+            content: '✓'; position: absolute; left: 0;
+            color: var(--color-primary); font-weight: 600;
+        }
+
+        .pricing-cta
+        {
+            display: inline-block; text-align: center;
+            font-size: 13px; font-weight: 600; letter-spacing: 0.06em;
+            text-transform: uppercase; color: var(--color-white);
+            background: var(--color-primary); border: none;
+            border-radius: 6px; padding: 13px 24px; cursor: pointer;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+
+        .pricing-cta:hover
+        {
+            background: #4a10d4; transform: translateY(-1px);
+        }
+
+        /* PORTFOLIO */
+        .sec-portfolio { border-top: 1px solid rgba(0,0,0,0.06); }
 
         .portfolio-reel
         {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 24px;
+            display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px;
         }
 
         .portfolio-item
         {
-            cursor: pointer;
-            border-radius: 10px;
-            overflow: hidden;
+            cursor: pointer; border-radius: 10px; overflow: hidden;
             background: var(--color-bg-dark);
             transition: transform 0.4s var(--ease-out), box-shadow 0.4s ease;
         }
@@ -547,367 +414,202 @@
         .portfolio-item:hover
         {
             transform: translateY(-3px);
-            box-shadow: 0 16px 48px rgba(92, 26, 245, 0.1);
+            box-shadow: 0 16px 48px rgba(92,26,245,0.1);
         }
 
         .portfolio-thumb
         {
-            position: relative;
-            aspect-ratio: 16 / 9;
-            overflow: hidden;
+            position: relative; aspect-ratio: 16/9; overflow: hidden;
         }
 
         .portfolio-thumb img
         {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+            width: 100%; height: 100%; object-fit: cover;
             transition: transform 0.6s var(--ease-out);
         }
 
-        .portfolio-item:hover .portfolio-thumb img
-        {
-            transform: scale(1.04);
-        }
+        .portfolio-item:hover .portfolio-thumb img { transform: scale(1.04); }
 
         .portfolio-play
         {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 56px;
-            height: 56px;
-            background: rgba(92, 26, 245, 0.85);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--color-white);
-            opacity: 0;
-            transition: opacity 0.3s ease;
+            position: absolute; top: 50%; left: 50%;
+            transform: translate(-50%,-50%);
+            width: 56px; height: 56px; background: rgba(92,26,245,0.85);
+            border-radius: 50%; display: flex; align-items: center;
+            justify-content: center; color: var(--color-white);
+            opacity: 0; transition: opacity 0.3s ease;
         }
 
-        .portfolio-item:hover .portfolio-play
-        {
-            opacity: 1;
-        }
+        .portfolio-item:hover .portfolio-play { opacity: 1; }
 
-        .portfolio-info
-        {
-            padding: 16px 20px;
-        }
+        .portfolio-info { padding: 16px 20px; }
 
         .portfolio-info h5
         {
-            font-family: var(--font-heading);
-            font-weight: 800;
-            font-size: 16px;
-            color: var(--color-text);
-            margin-bottom: 3px;
+            font-family: var(--font-heading); font-weight: 800;
+            font-size: 16px; color: var(--color-text); margin-bottom: 3px;
         }
 
-        .portfolio-info span
-        {
-            font-size: 13px;
-            color: var(--color-gray);
-        }
+        .portfolio-info span { font-size: 13px; color: var(--color-gray); }
 
-        /* ============================================
-           FOTO
-           ============================================ */
-        .sec-foto
-        {
-            border-top: 1px solid rgba(0, 0, 0, 0.06);
-        }
+        /* FOTO */
+        .sec-foto { border-top: 1px solid rgba(0,0,0,0.06); }
 
         .foto-grid
         {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 12px;
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px;
         }
 
         .foto-item
         {
-            border-radius: 8px;
-            overflow: hidden;
-            cursor: pointer;
-            aspect-ratio: 3 / 2;
+            border-radius: 8px; overflow: hidden;
+            cursor: pointer; aspect-ratio: 3/2;
         }
 
         .foto-item img
         {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+            width: 100%; height: 100%; object-fit: cover;
             transition: transform 0.5s var(--ease-out);
         }
 
-        .foto-item:hover img
-        {
-            transform: scale(1.04);
-        }
+        .foto-item:hover img { transform: scale(1.04); }
 
-        /* ============================================
-           CONTACT
-           ============================================ */
-        .sec-contact
-        {
-            border-top: 1px solid rgba(0, 0, 0, 0.06);
-        }
+        /* CONTACT */
+        .sec-contact { border-top: 1px solid rgba(0,0,0,0.06); }
 
         .contact-grid
         {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 64px;
-            align-items: start;
+            display: grid; grid-template-columns: 1fr 1fr;
+            gap: 64px; align-items: start;
         }
 
-        .contact-info
-        {
-            display: flex;
-            flex-direction: column;
-            gap: 28px;
-        }
+        .contact-info { display: flex; flex-direction: column; gap: 28px; }
 
         .contact-item h5
         {
-            font-size: 11px;
-            font-weight: 600;
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
-            color: var(--color-gray);
-            margin-bottom: 4px;
+            font-size: 11px; font-weight: 600; letter-spacing: 0.12em;
+            text-transform: uppercase; color: var(--color-gray); margin-bottom: 4px;
         }
 
         .contact-item a,
-        .contact-item p
-        {
-            font-size: 17px;
-            color: var(--color-text);
-        }
+        .contact-item p { font-size: 17px; color: var(--color-text); }
+        .contact-item a:hover { color: var(--color-primary); }
 
-        .contact-item a:hover
-        {
-            color: var(--color-primary);
-        }
-
-        .contact-form
-        {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
+        .contact-form { display: flex; flex-direction: column; gap: 20px; }
 
         .form-group label
         {
-            display: block;
-            font-size: 11px;
-            font-weight: 600;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            color: var(--color-gray);
-            margin-bottom: 6px;
+            display: block; font-size: 11px; font-weight: 600;
+            letter-spacing: 0.08em; text-transform: uppercase;
+            color: var(--color-gray); margin-bottom: 6px;
         }
 
         .form-group input,
         .form-group textarea,
         .form-group select
         {
-            width: 100%;
-            background: rgba(0, 0, 0, 0.04);
-            border: 1px solid rgba(0, 0, 0, 0.1);
-            border-radius: 6px;
-            padding: 12px 16px;
-            color: var(--color-text);
-            font-size: 15px;
-            outline: none;
+            width: 100%; background: rgba(0,0,0,0.04);
+            border: 1px solid rgba(0,0,0,0.1); border-radius: 6px;
+            padding: 12px 16px; color: var(--color-text);
+            font-size: 15px; outline: none;
             transition: border-color 0.3s ease;
+            font-family: var(--font-body);
         }
 
         .form-group input:focus,
         .form-group textarea:focus,
-        .form-group select:focus
-        {
-            border-color: var(--color-primary);
-        }
+        .form-group select:focus { border-color: var(--color-primary); }
 
-        .form-group textarea
-        {
-            resize: vertical;
-            min-height: 100px;
-        }
+        .form-group textarea { resize: vertical; min-height: 100px; }
 
         .form-group select
         {
-            appearance: none;
-            -webkit-appearance: none;
+            appearance: none; -webkit-appearance: none;
             background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L6 6L11 1' stroke='%23888' stroke-width='1.5'/%3E%3C/svg%3E");
-            background-repeat: no-repeat;
-            background-position: right 16px center;
+            background-repeat: no-repeat; background-position: right 16px center;
             padding-right: 40px;
         }
 
         .form-submit
         {
-            align-self: flex-start;
-            font-size: 13px;
-            font-weight: 600;
-            letter-spacing: 0.06em;
-            text-transform: uppercase;
-            color: var(--color-white);
-            background: var(--color-primary);
-            border: none;
-            border-radius: 6px;
-            padding: 13px 36px;
-            cursor: pointer;
-            transition: background 0.3s ease, transform 0.2s ease;
+            align-self: flex-start; font-size: 13px; font-weight: 600;
+            letter-spacing: 0.06em; text-transform: uppercase;
+            color: var(--color-white); background: var(--color-primary);
+            border: none; border-radius: 6px; padding: 13px 36px;
+            cursor: pointer; transition: background 0.3s ease, transform 0.2s ease;
         }
 
-        .form-submit:hover
-        {
-            background: #4a10d4;
-            transform: translateY(-1px);
-        }
+        .form-submit:hover { background: #4a10d4; transform: translateY(-1px); }
 
-        /* ============================================
-           FOOTER
-           ============================================ */
-        #footer
-        {
-            border-top: 1px solid rgba(0, 0, 0, 0.08);
-            padding: 40px 32px;
-        }
+        /* FOOTER */
+        #footer { border-top: 1px solid rgba(0,0,0,0.08); padding: 40px 32px; }
 
         .footer-inner
         {
-            max-width: var(--inner-max);
-            margin: 0 auto;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
+            max-width: var(--inner-max); margin: 0 auto;
+            display: flex; align-items: center; justify-content: space-between;
         }
 
         .footer-logo
         {
-            font-family: var(--font-heading);
-            font-weight: 800;
-            font-size: 22px;
-            color: var(--color-primary);
+            font-family: var(--font-heading); font-weight: 800;
+            font-size: 22px; color: var(--color-primary);
         }
 
-        .footer-social
-        {
-            display: flex;
-            gap: 20px;
-        }
+        .footer-social { display: flex; gap: 20px; }
+        .footer-social a { color: var(--color-gray); transition: color 0.3s ease; }
+        .footer-social a:hover { color: var(--color-primary); }
+        .footer-copy { font-size: 12px; color: var(--color-gray); }
 
-        .footer-social a
-        {
-            color: var(--color-gray);
-            transition: color 0.3s ease;
-        }
-
-        .footer-social a:hover
-        {
-            color: var(--color-primary);
-        }
-
-        .footer-copy
-        {
-            font-size: 12px;
-            color: var(--color-gray);
-        }
-
-        /* ============================================
-           VIDEO MODAL
-           ============================================ */
+        /* MODAL */
         .modal
         {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 10000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            visibility: hidden;
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            z-index: 10000; display: flex; align-items: center;
+            justify-content: center; opacity: 0; visibility: hidden;
             transition: opacity 0.4s ease, visibility 0.4s;
         }
 
-        .modal.open
-        {
-            opacity: 1;
-            visibility: visible;
-        }
+        .modal.open { opacity: 1; visibility: visible; }
 
         .modal-bg
         {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.92);
-            cursor: pointer;
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.92); cursor: pointer;
         }
 
         .modal-close
         {
-            position: absolute;
-            top: 20px;
-            right: 28px;
-            font-size: 36px;
-            color: var(--color-white);
-            z-index: 2;
-            line-height: 1;
-            transition: opacity 0.3s ease;
+            position: absolute; top: 20px; right: 28px;
+            font-size: 36px; color: var(--color-white); z-index: 2;
+            line-height: 1; transition: opacity 0.3s ease;
         }
 
-        .modal-close:hover
-        {
-            opacity: 0.6;
-        }
+        .modal-close:hover { opacity: 0.6; }
 
         .modal-inner
         {
-            position: relative;
-            z-index: 1;
-            width: 90%;
-            max-width: 1100px;
-            aspect-ratio: 16 / 9;
+            position: relative; z-index: 1; width: 90%;
+            max-width: 1100px; aspect-ratio: 16/9;
         }
 
         .modal-inner iframe
         {
-            width: 100%;
-            height: 100%;
-            border: none;
-            border-radius: 8px;
+            width: 100%; height: 100%; border: none; border-radius: 8px;
         }
 
-        /* ============================================
-           SCROLL ANIMATIONS
-           ============================================ */
+        /* ANIMATIONS */
         .anime
         {
-            opacity: 0;
-            transform: translateY(30px);
+            opacity: 0; transform: translateY(30px);
             transition: opacity 0.8s var(--ease-out), transform 0.8s var(--ease-out);
         }
 
-        .anime.visible
-        {
-            opacity: 1;
-            transform: translateY(0);
-        }
+        .anime.visible { opacity: 1; transform: translateY(0); }
 
-        /* Stagger */
+        .pricing-grid .anime:nth-child(2) { transition-delay: 0.1s; }
+        .pricing-grid .anime:nth-child(3) { transition-delay: 0.2s; }
+
         .portfolio-reel .anime:nth-child(2) { transition-delay: 0.1s; }
         .portfolio-reel .anime:nth-child(3) { transition-delay: 0.2s; }
         .portfolio-reel .anime:nth-child(4) { transition-delay: 0.3s; }
@@ -918,175 +620,87 @@
         .foto-grid .anime:nth-child(5) { transition-delay: 0.24s; }
         .foto-grid .anime:nth-child(6) { transition-delay: 0.3s; }
 
-        /* ============================================
-           RESPONSIVE — TABLET
-           ============================================ */
+        /* RESPONSIVE */
         @media (max-width: 1024px)
         {
-            .about-grid,
-            .contact-grid
-            {
-                grid-template-columns: 1fr;
-                gap: 48px;
-            }
+            .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 48px; }
+            .pricing-grid { grid-template-columns: 1fr; max-width: 420px; margin: 0 auto; }
         }
 
-        /* ============================================
-           RESPONSIVE — MOBILE
-           ============================================ */
         @media (max-width: 768px)
         {
-            :root
-            {
-                --section-padding: 72px 20px;
-                --header-height: 56px;
-            }
-
-            .menu-toggle-label
-            {
-                display: none;
-            }
-
-            .portfolio-reel
-            {
-                grid-template-columns: 1fr;
-            }
-
-            .foto-grid
-            {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .about-team
-            {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .footer-inner
-            {
-                flex-direction: column;
-                gap: 16px;
-                text-align: center;
-            }
-
-            .content::before
-            {
-                top: -30px;
-                height: 30px;
-            }
+            :root { --section-padding: 72px 20px; --header-height: 56px; }
+            .menu-toggle-label { display: none; }
+            .portfolio-reel { grid-template-columns: 1fr; }
+            .foto-grid { grid-template-columns: repeat(2, 1fr); }
+            .about-team { flex-direction: column; align-items: center; }
+            .footer-inner { flex-direction: column; gap: 16px; text-align: center; }
+            .content::before { top: -30px; height: 30px; }
         }
 
         @media (max-width: 480px)
         {
-            .foto-grid
-            {
-                grid-template-columns: 1fr;
-            }
+            .foto-grid { grid-template-columns: 1fr; }
         }
 
-        /* ============================================
-           BODY LOCK
-           ============================================ */
-        body.locked
-        {
-            overflow: hidden;
-        }
+        body.locked { overflow: hidden; }
 
-        /* ============================================
-           HEADER COLOR MODES
-           ============================================ */
         #header.on-video .menu-toggle,
         #header.on-video .header-logo,
-        #header.on-video .header-lang a
-        {
-            color: var(--color-white);
-        }
-
-        #header.on-video .header-lang a.active
-        {
-            color: var(--color-white);
-        }
-
-        #header.on-video .header-lang span
-        {
-            color: rgba(255, 255, 255, 0.5);
-        }
-
-        #header.on-video .header-lang a:not(.active)
-        {
-            color: rgba(255, 255, 255, 0.5);
-        }
-
-        #header.on-video .header-logo
-        {
-            color: var(--color-white);
-        }
+        #header.on-video .header-lang a { color: var(--color-white); }
+        #header.on-video .header-lang a.active { color: var(--color-white); }
+        #header.on-video .header-lang span { color: rgba(255,255,255,0.5); }
+        #header.on-video .header-lang a:not(.active) { color: rgba(255,255,255,0.5); }
     </style>
 </head>
 <body>
 
-    <!-- ============================================
-         HEADER
-         ============================================ -->
+    <!-- HEADER -->
     <header id="header" class="on-video">
-
-        <!-- Menu toggle — left -->
         <button class="menu-toggle" id="menu-toggle" aria-label="Menu">
             <span class="menu-toggle-icon">
-                <span></span>
-                <span></span>
-                <span></span>
+                <span></span><span></span><span></span>
             </span>
             <span class="menu-toggle-label">Menu</span>
         </button>
-
-        <!-- Logo — center -->
         <a href="#" class="header-logo">nmmnt.</a>
-
-        <!-- Lang — right -->
         <div class="header-lang">
             <a href="#" class="active">CZ</a>
             <span>/</span>
             <a href="en/">EN</a>
         </div>
-
     </header>
 
-    <!-- ============================================
-         DROPDOWN MENU
-         ============================================ -->
+    <!-- DROPDOWN MENU -->
     <div class="dropdown-menu" id="dropdown-menu">
         <nav>
             <ul>
                 <li><a href="#about" data-menu>O nás</a></li>
+                <li><a href="#pricing" data-menu>Ceník</a></li>
                 <li><a href="#portfolio" data-menu>Video</a></li>
                 <li><a href="#foto" data-menu>Foto</a></li>
                 <li><a href="#contact" data-menu>Kontakt</a></li>
             </ul>
         </nav>
         <div class="menu-socials">
-            <a href="https://www.instagram.com/nmmnt.film/" target="_blank" rel="noopener">Instagram</a>
+            <a href="https://www.instagram.com/nmmnt__" target="_blank" rel="noopener">Instagram</a>
             <a href="https://vimeo.com/nmmnt" target="_blank" rel="noopener">Vimeo</a>
         </div>
     </div>
 
-    <!-- ============================================
-         HERO — STICKY VIDEO
-         ============================================ -->
+    <!-- HERO -->
     <div class="hero-wrap">
         <section class="hero">
             <div class="hero-video">
-                <!-- Vimeo embed — nahraď VIMEO_ID svým showreelem -->
                 <iframe
                     src="https://player.vimeo.com/video/VIMEO_ID?background=1&autoplay=1&loop=1&muted=1&quality=1080p"
-                    allow="autoplay; fullscreen"
-                    allowfullscreen
-                    loading="lazy"
+                    allow="autoplay; fullscreen" allowfullscreen loading="lazy"
                 ></iframe>
             </div>
             <div class="hero-overlay"></div>
             <div class="hero-content">
+                <h1 class="hero-tagline">Dva pohledy. Jeden příběh.</h1>
+                <p class="hero-sub">Momenty, které trvají věčně</p>
                 <div class="hero-scroll-hint">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
                 </div>
@@ -1094,9 +708,7 @@
         </section>
     </div>
 
-    <!-- ============================================
-         CONTENT — slides over video
-         ============================================ -->
+    <!-- CONTENT -->
     <main class="content">
 
         <!-- O NÁS -->
@@ -1107,25 +719,85 @@
 
                 <div class="about-grid">
                     <div class="about-text anime">
-                        <p>Jsme filmová a fotografická produkce zaměřená na autentické zachycení momentů. Každý projekt přistupujeme jako unikátní příběh — ať jde o svatbu, komerční spot nebo dokumentární sérii.</p>
-                        <p>Pracujeme s kinematografickým přístupem a důrazem na detail. Věříme, že nejlepší záběry vznikají tam, kde se technika potkává s emocí.</p>
+                        <p>Váš svatební den rádi zdokumentujeme od prvních ranních příprav až po rozjetou večerní party. Zakládáme si na přátelském a uvolněném přístupu, proto se s vámi před svatbou rádi setkáme osobně.</p>
+                        <p>Poznáme se, probereme detaily a sladíme vaše představy s našimi zkušenostmi. Pracujeme jako sehraný tým — ať jde o video, foto, nebo obojí.</p>
                     </div>
                     <div class="about-team anime">
                         <div class="team-member">
                             <div class="team-photo">
-                                <img src="assets/img/team-1.jpg" alt="Člen týmu" loading="lazy">
+                                <img src="assets/img/team-robin.jpg" alt="Robin" loading="lazy">
                             </div>
                             <h5>Robin</h5>
                             <span>Video &amp; Edit</span>
                         </div>
                         <div class="team-member">
                             <div class="team-photo">
-                                <img src="assets/img/team-2.jpg" alt="Člen týmu" loading="lazy">
+                                <img src="assets/img/team-katerina.jpg" alt="Kateřina" loading="lazy">
                             </div>
-                            <h5>Partner</h5>
+                            <h5>Kateřina</h5>
                             <span>Foto &amp; Color</span>
                         </div>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CENÍK -->
+        <section class="sec sec-pricing" id="pricing">
+            <div class="section-inner">
+                <div class="section-label anime">Ceník</div>
+                <h2 class="section-title anime">Vyberte si variantu</h2>
+                <p class="section-desc anime">Každá varianta zahrnuje celodenní dokumentaci — od ranních příprav po večerní party.</p>
+
+                <div class="pricing-grid">
+
+                    <!-- 1. FOTO -->
+                    <div class="pricing-card anime">
+                        <div class="pricing-label">Balíček 1</div>
+                        <h3 class="pricing-name">Svatební focení</h3>
+                        <div class="pricing-price">23 000 <small>Kč</small></div>
+                        <ul class="pricing-list">
+                            <li>Celý den — od příprav po party</li>
+                            <li>Fotí Kateřina</li>
+                            <li>Předsvatební schůzka s krátkým focením</li>
+                            <li>Cca 400 upravených fotografií</li>
+                            <li>Elektronické album pro sdílení</li>
+                        </ul>
+                        <a href="#contact" class="pricing-cta">Mám zájem</a>
+                    </div>
+
+                    <!-- 2. VIDEO -->
+                    <div class="pricing-card anime">
+                        <div class="pricing-label">Balíček 2</div>
+                        <h3 class="pricing-name">Svatební video</h3>
+                        <div class="pricing-price">33 000 <small>Kč</small></div>
+                        <ul class="pricing-list">
+                            <li>Celý den — od příprav po party</li>
+                            <li>Natáčí Kateřina a Robin</li>
+                            <li>Video min. 6 minut</li>
+                            <li>30s reels pro sociální sítě</li>
+                            <li>Autentický zvuk (sliby, přípitky…)</li>
+                            <li>Dronové záběry</li>
+                        </ul>
+                        <a href="#contact" class="pricing-cta">Mám zájem</a>
+                    </div>
+
+                    <!-- 3. KOMPLET -->
+                    <div class="pricing-card featured anime">
+                        <div class="pricing-label">Nejoblíbenější</div>
+                        <h3 class="pricing-name">Foto + Video</h3>
+                        <div class="pricing-price">49 000 <small>Kč</small></div>
+                        <ul class="pricing-list">
+                            <li>Vše z obou předchozích balíčků</li>
+                            <li>Celodenní produkce</li>
+                            <li>Předsvatební schůzka + párové focení</li>
+                            <li>Fotoalbum + 6–10 min video + 30s reels</li>
+                            <li>Autentický zvuk z obřadu</li>
+                            <li>Výhoda sehraného týmu — bez stresu</li>
+                        </ul>
+                        <a href="#contact" class="pricing-cta">Mám zájem</a>
+                    </div>
+
                 </div>
             </div>
         </section>
@@ -1135,7 +807,7 @@
             <div class="section-inner">
                 <div class="section-label anime">Video</div>
                 <h2 class="section-title anime">Vybrané projekty</h2>
-                <p class="section-desc anime">Svatby, eventy, komerční spoty — každý projekt je originální příběh.</p>
+                <p class="section-desc anime">Každá svatba je originální příběh. Tady jsou některé z nich.</p>
 
                 <div class="portfolio-reel">
                     <div class="portfolio-item anime btn-vimeo" data-vimeo-id="VIMEO_ID_1">
@@ -1160,7 +832,7 @@
                         </div>
                         <div class="portfolio-info">
                             <h5>Název projektu</h5>
-                            <span>Komerční · 2025</span>
+                            <span>Svatba · 2025</span>
                         </div>
                     </div>
 
@@ -1173,7 +845,7 @@
                         </div>
                         <div class="portfolio-info">
                             <h5>Název projektu</h5>
-                            <span>Event · 2024</span>
+                            <span>Svatba · 2024</span>
                         </div>
                     </div>
 
@@ -1186,7 +858,7 @@
                         </div>
                         <div class="portfolio-info">
                             <h5>Název projektu</h5>
-                            <span>Dokument · 2024</span>
+                            <span>Svatba · 2024</span>
                         </div>
                     </div>
                 </div>
@@ -1215,7 +887,7 @@
         <section class="sec sec-contact" id="contact">
             <div class="section-inner">
                 <div class="section-label anime">Kontakt</div>
-                <h2 class="section-title anime">Ozvěte se nám</h2>
+                <h2 class="section-title anime">Těšíme se na vaši odpověď</h2>
 
                 <div class="contact-grid">
                     <div class="contact-info anime">
@@ -1229,7 +901,7 @@
                         </div>
                         <div class="contact-item">
                             <h5>Instagram</h5>
-                            <a href="https://www.instagram.com/nmmnt.film/" target="_blank" rel="noopener">@nmmnt.film</a>
+                            <a href="https://www.instagram.com/nmmnt__" target="_blank" rel="noopener">@nmmnt__</a>
                         </div>
                         <div class="contact-item">
                             <h5>Sídlo</h5>
@@ -1247,20 +919,22 @@
                             <input type="email" id="email" name="email" required>
                         </div>
                         <div class="form-group">
-                            <label for="service">Služba</label>
+                            <label for="service">Balíček</label>
                             <select id="service" name="service">
                                 <option value="" disabled selected>Vyberte…</option>
-                                <option value="svatba-video">Svatba — video</option>
-                                <option value="svatba-foto">Svatba — foto</option>
-                                <option value="svatba-komplet">Svatba — video + foto</option>
-                                <option value="komercni">Komerční projekt</option>
-                                <option value="event">Event</option>
-                                <option value="jine">Jiné</option>
+                                <option value="foto-23000">Svatební focení — 23 000 Kč</option>
+                                <option value="video-33000">Svatební video — 33 000 Kč</option>
+                                <option value="komplet-49000">Foto + Video — 49 000 Kč</option>
+                                <option value="jine">Jiné / Nezávazná poptávka</option>
                             </select>
                         </div>
                         <div class="form-group">
+                            <label for="date">Termín svatby</label>
+                            <input type="date" id="date" name="date">
+                        </div>
+                        <div class="form-group">
                             <label for="message">Zpráva</label>
-                            <textarea id="message" name="message" rows="4"></textarea>
+                            <textarea id="message" name="message" rows="4" placeholder="Řekněte nám o vaší svatbě…"></textarea>
                         </div>
                         <button type="submit" class="form-submit">Odeslat</button>
                     </form>
@@ -1270,27 +944,23 @@
 
     </main>
 
-    <!-- ============================================
-         FOOTER
-         ============================================ -->
+    <!-- FOOTER -->
     <footer id="footer">
         <div class="footer-inner">
             <a href="#" class="footer-logo">nmmnt.</a>
             <div class="footer-social">
-                <a href="https://www.instagram.com/nmmnt.film/" target="_blank" rel="noopener" aria-label="Instagram">
+                <a href="https://www.instagram.com/nmmnt__" target="_blank" rel="noopener" aria-label="Instagram">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
                 </a>
                 <a href="https://vimeo.com/nmmnt" target="_blank" rel="noopener" aria-label="Vimeo">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M22 7.42c-.1 2.15-1.6 5.09-4.5 8.82C14.5 19.74 12.1 21.5 10.1 21.5c-1.24 0-2.3-1.15-3.16-3.45-.58-2.1-1.15-4.22-1.73-6.33-.64-2.3-1.33-3.45-2.06-3.45-.16 0-.72.34-1.68 1.01L.5 8.05c1.06-.93 2.1-1.86 3.13-2.8C5.02 4.04 6.1 3.38 6.83 3.31c1.47-.14 2.37.86 2.71 3.01.37 2.32.62 3.76.77 4.32.43 1.94.9 2.92 1.41 2.92.4 0 1-.63 1.8-1.89.8-1.26 1.22-2.22 1.28-2.88.11-1.09-.32-1.64-1.28-1.64-.46 0-.93.1-1.42.32.94-3.09 2.74-4.59 5.42-4.51 1.98.05 2.91 1.34 2.8 3.86z"/></svg>
                 </a>
             </div>
-            <span class="footer-copy">&copy; 2025 nmmnt.</span>
+            <span class="footer-copy">&copy; 2026 nmmnt.</span>
         </div>
     </footer>
 
-    <!-- ============================================
-         VIDEO MODAL
-         ============================================ -->
+    <!-- VIDEO MODAL -->
     <div class="modal" id="modal-video">
         <div class="modal-bg"></div>
         <button class="modal-close" aria-label="Zavřít">&times;</button>
@@ -1299,15 +969,10 @@
         </div>
     </div>
 
-    <!-- ============================================
-         JAVASCRIPT
-         ============================================ -->
+    <!-- JS -->
     <script>
     document.addEventListener('DOMContentLoaded', function ()
     {
-        /* ------------------------------------------
-           MENU TOGGLE
-        ------------------------------------------ */
         var toggle = document.getElementById('menu-toggle');
         var dropdown = document.getElementById('dropdown-menu');
 
@@ -1318,7 +983,6 @@
             document.body.classList.toggle('locked');
         });
 
-        // Close on link click
         document.querySelectorAll('[data-menu]').forEach(function (link)
         {
             link.addEventListener('click', function ()
@@ -1329,9 +993,6 @@
             });
         });
 
-        /* ------------------------------------------
-           HEADER — scroll state + color mode
-        ------------------------------------------ */
         var header = document.getElementById('header');
         var heroWrap = document.querySelector('.hero-wrap');
 
@@ -1340,22 +1001,13 @@
             var scrollY = window.scrollY;
             var heroBottom = heroWrap.offsetTop + heroWrap.offsetHeight;
 
-            // Scrolled background
-            if (scrollY > 60)
-            {
-                header.classList.add('scrolled');
-            }
-            else
-            {
-                header.classList.remove('scrolled');
-            }
+            if (scrollY > 60) { header.classList.add('scrolled'); }
+            else { header.classList.remove('scrolled'); }
 
-            // White text on video, dark text on content
             if (scrollY < heroBottom - 100)
             {
                 header.classList.add('on-video');
                 header.classList.remove('scrolled');
-                // Override: transparent on video
                 header.style.background = 'transparent';
             }
             else
@@ -1368,9 +1020,6 @@
         window.addEventListener('scroll', updateHeader, { passive: true });
         updateHeader();
 
-        /* ------------------------------------------
-           SMOOTH SCROLL
-        ------------------------------------------ */
         document.querySelectorAll('a[href^="#"]').forEach(function (anchor)
         {
             anchor.addEventListener('click', function (e)
@@ -1380,20 +1029,12 @@
                 var target = document.getElementById(id);
                 if (target)
                 {
-                    var offset = 64;
-                    window.scrollTo({
-                        top: target.offsetTop - offset,
-                        behavior: 'smooth'
-                    });
+                    window.scrollTo({ top: target.offsetTop - 64, behavior: 'smooth' });
                 }
             });
         });
 
-        /* ------------------------------------------
-           SCROLL ANIMATIONS
-        ------------------------------------------ */
         var animeEls = document.querySelectorAll('.anime');
-
         if ('IntersectionObserver' in window)
         {
             var observer = new IntersectionObserver(function (entries)
@@ -1406,22 +1047,11 @@
                         observer.unobserve(entry.target);
                     }
                 });
-            },
-            {
-                threshold: 0.12,
-                rootMargin: '0px 0px -30px 0px'
-            });
-
+            }, { threshold: 0.12, rootMargin: '0px 0px -30px 0px' });
             animeEls.forEach(function (el) { observer.observe(el); });
         }
-        else
-        {
-            animeEls.forEach(function (el) { el.classList.add('visible'); });
-        }
+        else { animeEls.forEach(function (el) { el.classList.add('visible'); }); }
 
-        /* ------------------------------------------
-           VIDEO MODAL
-        ------------------------------------------ */
         var modal = document.getElementById('modal-video');
         var modalIframe = document.getElementById('modal-iframe');
 
@@ -1444,30 +1074,20 @@
             btn.addEventListener('click', function ()
             {
                 var id = this.getAttribute('data-vimeo-id');
-                if (id && id.indexOf('VIMEO_ID') === -1)
-                {
-                    openModal(id);
-                }
+                if (id && id.indexOf('VIMEO_ID') === -1) { openModal(id); }
             });
         });
 
         modal.querySelector('.modal-close').addEventListener('click', closeModal);
         modal.querySelector('.modal-bg').addEventListener('click', closeModal);
-        document.addEventListener('keydown', function (e)
-        {
-            if (e.key === 'Escape') closeModal();
-        });
+        document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeModal(); });
 
-        /* ------------------------------------------
-           FOTO LIGHTBOX
-        ------------------------------------------ */
         document.querySelectorAll('.foto-item').forEach(function (item)
         {
             item.addEventListener('click', function ()
             {
                 var img = this.querySelector('img');
                 if (!img) return;
-
                 var lb = document.createElement('div');
                 lb.className = 'modal open';
                 lb.style.zIndex = '10001';
@@ -1476,44 +1096,28 @@
                     + '<div class="modal-inner" style="aspect-ratio:auto;max-height:90vh;display:flex;align-items:center;justify-content:center;">'
                     + '<img src="' + img.src + '" alt="' + (img.alt || '') + '" style="max-width:100%;max-height:90vh;object-fit:contain;border-radius:8px;">'
                     + '</div>';
-
                 document.body.appendChild(lb);
                 document.body.classList.add('locked');
-
                 function closeLb()
                 {
                     lb.classList.remove('open');
                     document.body.classList.remove('locked');
                     setTimeout(function () { lb.remove(); }, 400);
                 }
-
                 lb.querySelector('.modal-bg').addEventListener('click', closeLb);
                 lb.querySelector('.modal-close').addEventListener('click', closeLb);
             });
         });
 
-        /* ------------------------------------------
-           FORM FEEDBACK
-        ------------------------------------------ */
         var form = document.querySelector('.contact-form');
         if (form)
         {
             form.addEventListener('submit', function ()
             {
                 var btn = form.querySelector('.form-submit');
-                if (btn)
-                {
-                    btn.textContent = 'Odesílám…';
-                    btn.style.opacity = '0.7';
-                    btn.style.pointerEvents = 'none';
-                }
+                if (btn) { btn.textContent = 'Odesílám…'; btn.style.opacity = '0.7'; btn.style.pointerEvents = 'none'; }
             });
         }
-
-        /* ------------------------------------------
-           LUCIDE ICONS INIT
-        ------------------------------------------ */
-        if (window.lucide) lucide.createIcons();
     });
     </script>
 
