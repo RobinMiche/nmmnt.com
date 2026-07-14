@@ -181,7 +181,7 @@
         .dropdown-menu .menu-socials a:hover { color: var(--color-primary); }
 
         /* ============================================
-           HERO — STICKY FULLSCREEN VIDEO
+           HERO — STICKY FULLSCREEN VIDEO (4:3)
            ============================================ */
         .hero-wrap
         {
@@ -213,9 +213,11 @@
         }
 
         /*
-           Vimeo iframe — object-fit cover simulation.
-           The iframe is scaled so the 16:9 video always
-           fills the entire viewport regardless of aspect ratio.
+           Vimeo iframe — 4:3 cover simulation.
+           75vw = 4:3 ratio based on width (100 * 3/4)
+           133.33vh = 4:3 ratio based on height (100 * 4/3)
+           This ensures the 4:3 video always fills the
+           entire viewport with no letterbox/pillarbox.
         */
         .hero-video iframe
         {
@@ -223,9 +225,9 @@
             top: 50%;
             left: 50%;
             width: 100vw;
-            height: 56.25vw;        /* 16:9 based on width */
+            height: 75vw;           /* 4:3 ratio based on width */
             min-height: 100vh;
-            min-width: 177.78vh;    /* 16:9 based on height */
+            min-width: 133.33vh;    /* 4:3 ratio based on height */
             transform: translate(-50%, -50%);
             pointer-events: none;
             border: none;
@@ -1134,9 +1136,9 @@
         var modal = document.getElementById('modal-video');
         var modalIframe = document.getElementById('modal-iframe');
 
-        function openModal(1209288154)
+        function openModal(vimeoId)
         {
-            modalIframe.src = 'https://player.vimeo.com/video/1209288154?autoplay=1&title=0&byline=0&portrait=0';
+            modalIframe.src = 'https://player.vimeo.com/video/' + vimeoId + '?autoplay=1&title=0&byline=0&portrait=0';
             modal.classList.add('open');
             document.body.classList.add('locked');
         }
@@ -1153,7 +1155,7 @@
             btn.addEventListener('click', function ()
             {
                 var id = this.getAttribute('data-vimeo-id');
-                if (id && id.indexOf('1209288154') === -1) { openModal(id); }
+                if (id && id.indexOf('VIMEO_ID') === -1) { openModal(id); }
             });
         });
 
