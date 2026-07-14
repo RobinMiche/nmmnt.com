@@ -358,60 +358,48 @@
             max-width: 640px; margin-bottom: 56px;
         }
 
-        /* ABOUT */
-        .about-grid
-        {
-            display: grid; grid-template-columns: 1fr 1fr;
-            gap: 64px; align-items: center;
-        }
+/* ABOUT */
+.about-grid
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: center;
+}
 
-        .about-text p
-        {
-            font-size: 16px; font-weight: 300; line-height: 1.9;
-            color: var(--color-text-light); margin-bottom: 20px;
-        }
+.about-text p
+{
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.9;
+    color: var(--color-text-light);
+    margin-bottom: 20px;
+}
 
-        /* Team — single shared card */
-        .about-team-single
-        {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-        }
+.about-photo
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
 
-        .team-photo-shared
-        {
-            width: 220px;
-            height: 220px;
-            border-radius: 50%;
-            overflow: hidden;
-            margin-bottom: 20px;
-            background: var(--color-bg-dark);
-        }
+.about-photo img
+{
+    width: 100%;
+    max-width: 400px;
+    border-radius: 12px;
+    margin-bottom: 16px;
+}
 
-        .team-photo-shared img
-        {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
+.about-photo-caption
+{
+    font-family: var(--font-heading);
+    font-weight: 800;
+    font-size: 18px;
+    color: var(--color-text);
+}
 
-        .team-names
-        {
-            font-family: var(--font-heading);
-            font-weight: 800;
-            font-size: 20px;
-            color: var(--color-text);
-            margin-bottom: 6px;
-        }
-
-        .team-roles
-        {
-            font-size: 14px;
-            color: var(--color-gray);
-            line-height: 1.6;
-        }
 
         /* PRICING */
         .sec-pricing { border-top: 1px solid rgba(0,0,0,0.06); }
@@ -842,30 +830,25 @@
     <!-- CONTENT -->
     <main class="content">
 
-        <!-- O NÁS -->
-        <section class="sec" id="about">
-            <div class="section-inner">
-                <div class="section-label anime">O nás</div>
-                <h2 class="section-title anime">Příběhy, které<br>zůstávají v paměti.</h2>
+<!-- O NÁS -->
+<section class="sec" id="about">
+    <div class="section-inner">
+        <div class="section-label anime">O nás</div>
+        <h2 class="section-title anime">Příběhy, které<br>zůstávají v paměti.</h2>
 
-                <div class="about-grid">
-                    <div class="about-text anime">
-                        <p>Váš svatební den rádi zdokumentujeme od prvních ranních příprav až po rozjetou večerní party. Zakládáme si na přátelském a uvolněném přístupu, proto se s vámi před svatbou rádi setkáme osobně.</p>
-                        <p>Poznáme se, probereme detaily a sladíme vaše představy s našimi zkušenostmi. Pracujeme jako sehraný tým — ať jde o video, foto, nebo obojí.</p>
-                    </div>
-                    <div class="about-team-single anime">
-                        <div class="team-photo-shared">
-                            <img src="assets/img/KR_2.jpeg" alt="Kateřina a Robin" loading="lazy">
-                        </div>
-                        <div class="team-names">Kateřina &amp; Robin</div>
-                        <div class="team-roles">
-                            Video · Edit · Color<br>
-                            Kateřina — Foto
-                        </div>
-                    </div>
-                </div>
+        <div class="about-grid">
+            <div class="about-text anime">
+                <p>Váš svatební den rádi zdokumentujeme od prvních ranních příprav až po rozjetou večerní party. Zakládáme si na přátelském a uvolněném přístupu, proto se s vámi před svatbou rádi setkáme osobně.</p>
+                <p>Poznáme se, probereme detaily a sladíme vaše představy s našimi zkušenostmi. Pracujeme jako sehraný tým — ať jde o video, foto, nebo obojí.</p>
             </div>
-        </section>
+            <div class="about-photo anime">
+                <img src="assets/img/KR_2.jpeg" alt="Kateřina a Robin" loading="lazy">
+                <div class="about-photo-caption">Kateřina &amp; Robin</div>
+            </div>
+        </div>
+    </div>
+</section>
+
 
         <!-- CENÍK -->
         <section class="sec sec-pricing" id="pricing">
@@ -922,68 +905,43 @@
             </div>
         </section>
 
-        <!-- VIDEO PORTFOLIO -->
-        <section class="sec sec-portfolio" id="portfolio">
-            <div class="section-inner">
-                <div class="section-label anime">Video</div>
-                <h2 class="section-title anime">Vybrané projekty</h2>
-                <p class="section-desc anime">Každá svatba je originální příběh. Tady jsou některé z nich.</p>
+<!-- VIDEO PORTFOLIO -->
+<section class="sec sec-portfolio" id="portfolio">
+    <div class="section-inner">
+        <div class="section-label anime">Video</div>
+        <h2 class="section-title anime">Vybrané projekty</h2>
+        <p class="section-desc anime">Každá svatba je originální příběh. Tady jsou některé z nich.</p>
 
-                <div class="portfolio-reel">
-                    <div class="portfolio-item anime btn-vimeo" data-vimeo-id="VIMEO_ID_1">
-                        <div class="portfolio-thumb">
-                            <img src="assets/img/thumb-1.jpg" alt="Projekt 1" loading="lazy">
-                            <div class="portfolio-play">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><polygon points="6,3 20,12 6,21"/></svg>
-                            </div>
-                        </div>
-                        <div class="portfolio-info">
-                            <h5>Název projektu</h5>
-                            <span>Svatba · 2025</span>
-                        </div>
-                    </div>
-
-                    <div class="portfolio-item anime btn-vimeo" data-vimeo-id="VIMEO_ID_2">
-                        <div class="portfolio-thumb">
-                            <img src="assets/img/thumb-2.jpg" alt="Projekt 2" loading="lazy">
-                            <div class="portfolio-play">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><polygon points="6,3 20,12 6,21"/></svg>
-                            </div>
-                        </div>
-                        <div class="portfolio-info">
-                            <h5>Název projektu</h5>
-                            <span>Svatba · 2025</span>
-                        </div>
-                    </div>
-
-                    <div class="portfolio-item anime btn-vimeo" data-vimeo-id="VIMEO_ID_3">
-                        <div class="portfolio-thumb">
-                            <img src="assets/img/thumb-3.jpg" alt="Projekt 3" loading="lazy">
-                            <div class="portfolio-play">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><polygon points="6,3 20,12 6,21"/></svg>
-                            </div>
-                        </div>
-                        <div class="portfolio-info">
-                            <h5>Název projektu</h5>
-                            <span>Svatba · 2024</span>
-                        </div>
-                    </div>
-
-                    <div class="portfolio-item anime btn-vimeo" data-vimeo-id="VIMEO_ID_4">
-                        <div class="portfolio-thumb">
-                            <img src="assets/img/thumb-4.jpg" alt="Projekt 4" loading="lazy">
-                            <div class="portfolio-play">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><polygon points="6,3 20,12 6,21"/></svg>
-                            </div>
-                        </div>
-                        <div class="portfolio-info">
-                            <h5>Název projektu</h5>
-                            <span>Svatba · 2024</span>
-                        </div>
+        <div class="portfolio-reel">
+            <div class="portfolio-item anime btn-vimeo" data-vimeo-id="1207178367">
+                <div class="portfolio-thumb">
+                    <img src="" alt="Svatební video 1" loading="lazy" data-vimeo-thumb="1207178367">
+                    <div class="portfolio-play">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><polygon points="6,3 20,12 6,21"/></svg>
                     </div>
                 </div>
+                <div class="portfolio-info">
+                    <h5>Svatební video</h5>
+                    <span>2025</span>
+                </div>
             </div>
-        </section>
+
+            <div class="portfolio-item anime btn-vimeo" data-vimeo-id="1149905901">
+                <div class="portfolio-thumb">
+                    <img src="" alt="Svatební video 2" loading="lazy" data-vimeo-thumb="1149905901">
+                    <div class="portfolio-play">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><polygon points="6,3 20,12 6,21"/></svg>
+                    </div>
+                </div>
+                <div class="portfolio-info">
+                    <h5>Svatební video</h5>
+                    <span>2025</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 
         <!-- FOTO -->
         <section class="sec sec-foto" id="foto">
@@ -1277,6 +1235,26 @@
                 if (btn) { btn.textContent = 'Odesílám…'; btn.style.opacity = '0.7'; btn.style.pointerEvents = 'none'; }
             });
         }
+        /* ---- Vimeo thumbnails auto-load ---- */
+document.querySelectorAll('[data-vimeo-thumb]').forEach(function (img)
+{
+    var id = img.getAttribute('data-vimeo-thumb');
+    fetch('https://vimeo.com/api/v2/video/' + id + '.json')
+        .then(function (res) { return res.json(); })
+        .then(function (data)
+        {
+            if (data && data[0])
+            {
+                /* Use the largest thumbnail available */
+                var thumb = data[0].thumbnail_large || data[0].thumbnail_medium || data[0].thumbnail_small;
+                /* Replace _640 with _1280 for higher resolution */
+                thumb = thumb.replace('_640', '_1280');
+                img.src = thumb;
+            }
+        })
+        .catch(function () { /* Thumbnail load failed — keep placeholder bg */ });
+});
+
     });
     </script>
 
