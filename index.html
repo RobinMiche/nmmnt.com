@@ -40,39 +40,38 @@
             --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
-html
-{
-    font-size: 16px;
-    scroll-behavior: smooth;
-    -webkit-font-smoothing: antialiased;
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    overflow-x: hidden;
-}
+        html
+        {
+            font-size: 16px;
+            scroll-behavior: smooth;
+            -webkit-font-smoothing: antialiased;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            overflow-x: hidden;
+        }
 
-body
-{
-    font-family: var(--font-body);
-    font-weight: 400;
-    line-height: 1.7;
-    color: var(--color-text);
-    background: var(--color-bg);
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    overflow-x: hidden;
-}
+        body
+        {
+            font-family: var(--font-body);
+            font-weight: 400;
+            line-height: 1.7;
+            color: var(--color-text);
+            background: var(--color-bg);
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            overflow-x: hidden;
+        }
 
-iframe
-{
-    border: none;
-    margin: 0;
-    padding: 0;
-}
-
+        iframe
+        {
+            border: none;
+            margin: 0;
+            padding: 0;
+        }
 
         a { color: inherit; text-decoration: none; }
         img { max-width: 100%; height: auto; display: block; }
@@ -181,130 +180,129 @@ iframe
 
         .dropdown-menu .menu-socials a:hover { color: var(--color-primary); }
 
-/* ============================================
-   HERO — STICKY FULLSCREEN VIDEO
-   ============================================ */
-.hero-wrap
-{
-    position: relative;
-    height: 200vh;
-}
+        /* ============================================
+           HERO — STICKY FULLSCREEN VIDEO
+           ============================================ */
+        .hero-wrap
+        {
+            position: relative;
+            height: 200vh;
+        }
 
-.hero
-{
-    position: sticky;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
-    z-index: 1;
-}
+        .hero
+        {
+            position: sticky;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            z-index: 1;
+            background: #000;
+        }
 
-/* Video wrapper — covers entire viewport */
-.hero-video
-{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-}
+        .hero-video
+        {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background: #000;
+        }
 
-/* 
-   Vimeo iframe trick:
-   Scale the iframe way beyond viewport so the video
-   always covers 100% width AND height with no letterbox.
-   The 56.25% ratio hack ensures 16:9 always fills.
-*/
-.hero-video iframe
-{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 100vw;
-    height: 56.25vw; /* 16:9 ratio based on width */
-    min-height: 100vh;
-    min-width: 177.78vh; /* 16:9 ratio based on height */
-    transform: translate(-50%, -50%);
-    pointer-events: none;
-    border: none;
-}
+        /*
+           Vimeo iframe — object-fit cover simulation.
+           The iframe is scaled so the 16:9 video always
+           fills the entire viewport regardless of aspect ratio.
+        */
+        .hero-video iframe
+        {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100vw;
+            height: 56.25vw;        /* 16:9 based on width */
+            min-height: 100vh;
+            min-width: 177.78vh;    /* 16:9 based on height */
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+            border: none;
+        }
 
-.hero-overlay
-{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(
-        to bottom,
-        rgba(10, 10, 10, 0.2) 0%,
-        rgba(10, 10, 10, 0.0) 40%,
-        rgba(10, 10, 10, 0.4) 100%
-    );
-    z-index: 2;
-    pointer-events: none;
-}
+        .hero-overlay
+        {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                to bottom,
+                rgba(0, 0, 0, 0.25) 0%,
+                rgba(0, 0, 0, 0.0) 35%,
+                rgba(0, 0, 0, 0.45) 100%
+            );
+            z-index: 2;
+            pointer-events: none;
+        }
 
-.hero-content
-{
-    position: absolute;
-    bottom: 80px;
-    left: 50%;
-    transform: translateX(-50%);
-    text-align: center;
-    z-index: 3;
-    width: 100%;
-    padding: 0 24px;
-}
+        .hero-content
+        {
+            position: absolute;
+            bottom: 80px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            z-index: 3;
+            width: 100%;
+            padding: 0 24px;
+        }
 
-.hero-tagline
-{
-    font-family: var(--font-heading);
-    font-weight: 800;
-    font-size: clamp(24px, 4vw, 42px);
-    color: var(--color-white);
-    letter-spacing: -0.01em;
-    margin-bottom: 8px;
-    text-shadow: 0 2px 30px rgba(0, 0, 0, 0.4);
-}
+        .hero-tagline
+        {
+            font-family: var(--font-heading);
+            font-weight: 800;
+            font-size: clamp(24px, 4vw, 42px);
+            color: var(--color-white);
+            letter-spacing: -0.01em;
+            margin-bottom: 8px;
+            text-shadow: 0 2px 30px rgba(0, 0, 0, 0.4);
+        }
 
-.hero-sub
-{
-    font-size: 14px;
-    font-weight: 300;
-    color: rgba(255, 255, 255, 0.7);
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    margin-bottom: 32px;
-}
+        .hero-sub
+        {
+            font-size: 14px;
+            font-weight: 300;
+            color: rgba(255, 255, 255, 0.7);
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-bottom: 32px;
+        }
 
-.hero-scroll-hint
-{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
-    color: rgba(255, 255, 255, 0.6);
-    font-size: 11px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-}
+        .hero-scroll-hint
+        {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 11px;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
 
-.hero-scroll-hint svg
-{
-    animation: scrollBounce 2s ease-in-out infinite;
-}
+        .hero-scroll-hint svg
+        {
+            animation: scrollBounce 2s ease-in-out infinite;
+        }
 
-@keyframes scrollBounce
-{
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(6px); }
-}
-
+        @keyframes scrollBounce
+        {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(6px); }
+        }
 
         /* CONTENT */
         .content { position: relative; z-index: 10; background: var(--color-bg); }
@@ -771,37 +769,28 @@ iframe
         </div>
     </div>
 
-    <!-- HERO -->
     <!-- HERO — STICKY FULLSCREEN VIDEO -->
-<div class="hero-wrap">
-    <section class="hero">
-        <div class="hero-video">
-            <!--
-                VIMEO EMBED:
-                - background=1  → skryje ovládací prvky, autoplay, loop, muted
-                - Nahraď VIMEO_ID svým skutečným ID
-                - Pokud je video privátní, přidej &h=HASH
-            -->
-<iframe
-    src="https://player.vimeo.com/video/1209288154?autoplay=1&loop=1&muted=1&controls=0&title=0&byline=0&portrait=0&sidedock=0&transparent=0"
-    allow="autoplay; fullscreen"
-    allowfullscreen
-    loading="eager"
-    title="nmmnt. showreel"
-></iframe>
-
-        </div>
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <h1 class="hero-tagline">Dva pohledy. Jeden příběh.</h1>
-            <p class="hero-sub">Momenty, které trvají věčně</p>
-            <div class="hero-scroll-hint">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
+    <div class="hero-wrap">
+        <section class="hero">
+            <div class="hero-video">
+                <iframe
+                    src="https://player.vimeo.com/video/1209288154?autoplay=1&loop=1&muted=1&controls=0&title=0&byline=0&portrait=0&sidedock=0&transparent=0"
+                    allow="autoplay; fullscreen"
+                    allowfullscreen
+                    loading="eager"
+                    title="nmmnt. showreel"
+                ></iframe>
             </div>
-        </div>
-    </section>
-</div>
-
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <h1 class="hero-tagline">Dva pohledy. Jeden příběh.</h1>
+                <p class="hero-sub">Momenty, které trvají věčně</p>
+                <div class="hero-scroll-hint">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
+                </div>
+            </div>
+        </section>
+    </div>
 
     <!-- CONTENT -->
     <main class="content">
@@ -845,8 +834,6 @@ iframe
                 <p class="section-desc anime">Každá varianta zahrnuje celodenní dokumentaci — od ranních příprav po večerní party.</p>
 
                 <div class="pricing-grid">
-
-                    <!-- 1. FOTO -->
                     <div class="pricing-card anime">
                         <div class="pricing-label">Balíček 1</div>
                         <h3 class="pricing-name">Svatební focení</h3>
@@ -861,7 +848,6 @@ iframe
                         <a href="#contact" class="pricing-cta">Mám zájem</a>
                     </div>
 
-                    <!-- 2. VIDEO -->
                     <div class="pricing-card anime">
                         <div class="pricing-label">Balíček 2</div>
                         <h3 class="pricing-name">Svatební video</h3>
@@ -877,7 +863,6 @@ iframe
                         <a href="#contact" class="pricing-cta">Mám zájem</a>
                     </div>
 
-                    <!-- 3. KOMPLET -->
                     <div class="pricing-card featured anime">
                         <div class="pricing-label">Nejoblíbenější</div>
                         <h3 class="pricing-name">Foto + Video</h3>
@@ -892,7 +877,6 @@ iframe
                         </ul>
                         <a href="#contact" class="pricing-cta">Mám zájem</a>
                     </div>
-
                 </div>
             </div>
         </section>
@@ -1150,9 +1134,9 @@ iframe
         var modal = document.getElementById('modal-video');
         var modalIframe = document.getElementById('modal-iframe');
 
-        function openModal(vimeoId)
+        function openModal(1209288154)
         {
-            modalIframe.src = 'https://player.vimeo.com/video/' + vimeoId + '?autoplay=1&title=0&byline=0&portrait=0';
+            modalIframe.src = 'https://player.vimeo.com/video/1209288154?autoplay=1&title=0&byline=0&portrait=0';
             modal.classList.add('open');
             document.body.classList.add('locked');
         }
@@ -1169,7 +1153,7 @@ iframe
             btn.addEventListener('click', function ()
             {
                 var id = this.getAttribute('data-vimeo-id');
-                if (id && id.indexOf('VIMEO_ID') === -1) { openModal(id); }
+                if (id && id.indexOf('1209288154') === -1) { openModal(id); }
             });
         });
 
