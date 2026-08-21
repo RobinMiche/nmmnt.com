@@ -5,6 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>nmmnt. — svatební video &amp; foto</title>
     <meta name="description" content="nmmnt. — svatební video a foto produkce. Robin a Kateřina. Dva pohledy. Jeden příběh.">
+    <link rel="canonical" href="https://nmmnt.com/">
+
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+
+    <!-- Open Graph / social sharing -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="nmmnt.">
+    <meta property="og:locale" content="cs_CZ">
+    <meta property="og:locale:alternate" content="en_US">
+    <meta property="og:title" content="nmmnt. — svatební video &amp; foto">
+    <meta property="og:description" content="Svatební video a foto produkce. Dva pohledy. Jeden příběh.">
+    <meta property="og:url" content="https://nmmnt.com/">
+    <meta property="og:image" content="https://nmmnt.com/assets/img/foto-1.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="nmmnt. — svatební video &amp; foto">
+    <meta name="twitter:description" content="Svatební video a foto produkce. Dva pohledy. Jeden příběh.">
+    <meta name="twitter:image" content="https://nmmnt.com/assets/img/foto-1.jpg">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,8 +41,8 @@
         :root
         {
             --color-primary: #5c1af5;
-            --color-bg: #fbf2cf;
-            --color-bg-dark: #f0e6b8;
+            --color-bg: #ffffff;
+            --color-bg-dark: #eeeeee;
             --color-text: #0a0a0a;
             --color-text-light: #3a3a3a;
             --color-white: #ffffff;
@@ -89,7 +107,7 @@
 
         #header.scrolled
         {
-            background: rgba(251, 242, 207, 0.92);
+            background: rgba(255, 255, 255, 0.92);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
         }
@@ -145,7 +163,7 @@
         .dropdown-menu
         {
             position: fixed; top: 0; left: 0; width: 100%; height: 100vh;
-            background: rgba(251, 242, 207, 0.97);
+            background: rgba(255, 255, 255, 0.97);
             backdrop-filter: blur(30px); -webkit-backdrop-filter: blur(30px);
             z-index: 999; display: flex; align-items: center; justify-content: center;
             opacity: 0; visibility: hidden;
@@ -319,10 +337,10 @@
             height: 30vh;
             background: linear-gradient(
                 to bottom,
-                rgba(251, 242, 207, 0) 0%,
-                rgba(251, 242, 207, 0.5) 35%,
-                rgba(251, 242, 207, 0.85) 65%,
-                rgba(251, 242, 207, 1) 100%
+                rgba(255, 255, 255, 0) 0%,
+                rgba(255, 255, 255, 0.5) 35%,
+                rgba(255, 255, 255, 0.85) 65%,
+                rgba(255, 255, 255, 1) 100%
             );
             pointer-events: none;
         }
@@ -412,7 +430,7 @@
 
         .pricing-card
         {
-            background: var(--color-white); border-radius: 14px;
+            background: var(--color-white); border: 1px solid rgba(0,0,0,0.07); border-radius: 14px;
             padding: 36px 28px; display: flex; flex-direction: column;
             transition: transform 0.4s var(--ease-out), box-shadow 0.4s ease;
         }
@@ -425,7 +443,7 @@
 
         .pricing-card.featured
         {
-            background: var(--color-primary); color: var(--color-white);
+            background: var(--color-primary); color: var(--color-white); border-color: transparent;
         }
 
         .pricing-card.featured .pricing-label,
@@ -842,7 +860,7 @@
                 <p>Poznáme se, probereme detaily a sladíme vaše představy s našimi zkušenostmi. Pracujeme jako sehraný tým — ať jde o video, foto, nebo obojí.</p>
             </div>
             <div class="about-photo anime">
-                <img src="assets/img/KR_2.jpeg" alt="Kateřina a Robin" loading="lazy">
+                <img src="assets/img/KR_2.jpg" alt="Kateřina a Robin" loading="lazy">
                 <div class="about-photo-caption">Kateřina &amp; Robin</div>
             </div>
         </div>
@@ -938,6 +956,19 @@
                     <span>2025</span>
                 </div>
             </div>
+
+            <div class="portfolio-item anime btn-vimeo" data-vimeo-id="1217248778">
+                <div class="portfolio-thumb">
+                    <img src="" alt="Svatební video 3" loading="lazy" data-vimeo-thumb="1217248778">
+                    <div class="portfolio-play">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><polygon points="6,3 20,12 6,21"/></svg>
+                    </div>
+                </div>
+                <div class="portfolio-info">
+                    <h5>Svatební video</h5>
+                    <span>2025</span>
+                </div>
+            </div>
         </div>
     </div>
 </section>
@@ -961,7 +992,6 @@
                     <div class="foto-item anime"><img src="assets/img/foto-8.jpg" alt="Foto 8" loading="lazy"></div>
                     <div class="foto-item anime"><img src="assets/img/foto-9.jpg" alt="Foto 9" loading="lazy"></div>
                     <div class="foto-item anime"><img src="assets/img/foto-10.jpg" alt="Foto 10" loading="lazy"></div>
-                    <div class="foto-item anime"><img src="assets/img/foto-11.jpg" alt="Foto 11" loading="lazy"></div>
                     <div class="foto-item anime"><img src="assets/img/foto-12.jpg" alt="Foto 12" loading="lazy"></div>
                     <div class="foto-item anime"><img src="assets/img/foto-13.jpg" alt="Foto 13" loading="lazy"></div>
                     <div class="foto-item anime"><img src="assets/img/foto-14.jpg" alt="Foto 14" loading="lazy"></div>
@@ -1011,7 +1041,8 @@
                         </div>
                     </div>
 
-                    <form class="contact-form anime" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                    <form class="contact-form anime" action="https://formspree.io/f/xjybljdy" method="POST">
+                        <input type="hidden" name="_subject" value="Nová poptávka z webu nmmnt.com">
                         <div class="form-group">
                             <label for="name">Jméno</label>
                             <input type="text" id="name" name="name" required>
