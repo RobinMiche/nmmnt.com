@@ -706,6 +706,10 @@
 
         .form-submit:hover { background: #4a10d4; transform: translateY(-1px); }
 
+        .form-status { font-size: 14px; line-height: 1.5; margin-top: 4px; }
+        .form-status.success { color: #1a7f37; }
+        .form-status.error { color: #c0392b; }
+
         /* FOOTER */
         #footer
         {
@@ -730,6 +734,31 @@
         .footer-social a { color: var(--color-gray); transition: color 0.3s ease; }
         .footer-social a:hover { color: var(--color-primary); }
         .footer-copy { font-size: 12px; color: var(--color-gray); }
+
+        /* STICKY BOOKING CTA */
+        .book-cta
+        {
+            position: fixed; top: 50%; right: 0; transform: translateY(-50%);
+            writing-mode: vertical-rl; z-index: 900;
+            background: var(--color-primary); color: var(--color-white);
+            font-family: var(--font-body); font-size: 13px; font-weight: 600;
+            letter-spacing: 0.12em; text-transform: uppercase;
+            padding: 20px 12px; border-radius: 8px 0 0 8px;
+            box-shadow: 0 8px 30px rgba(92, 26, 245, 0.35);
+            transition: background 0.3s ease, padding 0.3s ease;
+        }
+        .book-cta:hover { background: #4a10d4; padding-right: 16px; }
+
+        @media (max-width: 768px)
+        {
+            .book-cta
+            {
+                top: auto; bottom: 16px; right: 16px; transform: none;
+                writing-mode: horizontal-tb; border-radius: 999px;
+                font-size: 12px; padding: 12px 20px;
+                box-shadow: 0 6px 20px rgba(92, 26, 245, 0.4);
+            }
+        }
 
         /* MODAL */
         .modal
@@ -852,6 +881,9 @@
     </div>
 
     <!-- HERO — FIXED FULLSCREEN VIDEO BACKGROUND -->
+    <!-- Sticky booking CTA -->
+    <a href="#contact" class="book-cta">Book a date</a>
+
     <div class="hero">
         <div class="hero-video">
             <iframe
@@ -892,7 +924,7 @@
                 <p>We get to know each other, discuss the details, and align your vision with our experience. We work as a well-coordinated team — whether it's video, photo, or both.</p>
             </div>
             <div class="about-photo anime">
-                <img src="../assets/img/KR_2.jpg" alt="Kateřina and Robin" loading="lazy">
+                <img src="../assets/img/KR_2.jpg" width="1283" height="1711" alt="Kateřina and Robin" loading="lazy">
                 <div class="about-photo-caption">Kateřina &amp; Robin</div>
             </div>
         </div>
@@ -1014,35 +1046,35 @@
                 <p class="section-desc anime">Moments captured the way we see them.</p>
 
                 <div class="foto-grid">
-                    <div class="foto-item anime"><img src="../assets/img/foto-1.jpg" alt="Photo 1" loading="lazy"></div>
-                    <div class="foto-item anime"><img src="../assets/img/foto-2.jpg" alt="Photo 2" loading="lazy"></div>
-                    <div class="foto-item anime"><img src="../assets/img/foto-3.jpg" alt="Photo 3" loading="lazy"></div>
-                    <div class="foto-item anime"><img src="../assets/img/foto-4.jpg" alt="Photo 4" loading="lazy"></div>
-                    <div class="foto-item anime"><img src="../assets/img/foto-5.jpg" alt="Photo 5" loading="lazy"></div>
-                    <div class="foto-item anime"><img src="../assets/img/foto-6.jpg" alt="Photo 6" loading="lazy"></div>
-                    <div class="foto-item anime"><img src="../assets/img/foto-7.jpg" alt="Photo 7" loading="lazy"></div>
-                    <div class="foto-item anime"><img src="../assets/img/foto-8.jpg" alt="Photo 8" loading="lazy"></div>
-                    <div class="foto-item anime"><img src="../assets/img/foto-9.jpg" alt="Photo 9" loading="lazy"></div>
-                    <div class="foto-item anime"><img src="../assets/img/foto-10.jpg" alt="Photo 10" loading="lazy"></div>
-                    <div class="foto-item anime"><img src="../assets/img/foto-12.jpg" alt="Photo 12" loading="lazy"></div>
-                    <div class="foto-item anime"><img src="../assets/img/foto-13.jpg" alt="Photo 13" loading="lazy"></div>
-                    <div class="foto-item anime"><img src="../assets/img/foto-14.jpg" alt="Photo 14" loading="lazy"></div>
-                    <div class="foto-item anime"><img src="../assets/img/foto-15.jpg" alt="Photo 15" loading="lazy"></div>
-                    <div class="foto-item anime"><img src="../assets/img/foto-16.jpg" alt="Photo 16" loading="lazy"></div>
-                    <div class="foto-item anime"><img src="../assets/img/foto-17.jpg" alt="Photo 17" loading="lazy"></div>
-                    <div class="foto-item anime"><img src="../assets/img/foto-18.jpg" alt="Photo 18" loading="lazy"></div>
-                    <div class="foto-item anime"><img src="../assets/img/foto-19.jpg" alt="Photo 19" loading="lazy"></div>
-                    <div class="foto-item anime"><img src="../assets/img/foto-20.jpg" alt="Photo 20" loading="lazy"></div>
-                    <div class="foto-item anime"><img src="../assets/img/foto-21.jpg" alt="Photo 21" loading="lazy"></div>
-                    <div class="foto-item anime"><img src="../assets/img/foto-22.jpg" alt="Photo 22" loading="lazy"></div>
-                    <div class="foto-item anime"><img src="../assets/img/foto-23.jpg" alt="Photo 23" loading="lazy"></div>
-                    <div class="foto-item anime"><img src="../assets/img/foto-24.jpg" alt="Photo 24" loading="lazy"></div>
-                    <div class="foto-item anime"><img src="../assets/img/foto-25.jpg" alt="Photo 25" loading="lazy"></div>
-                    <div class="foto-item anime"><img src="../assets/img/foto-26.jpg" alt="Photo 26" loading="lazy"></div>
-                    <div class="foto-item anime"><img src="../assets/img/foto-27.jpg" alt="Photo 27" loading="lazy"></div>
-                    <div class="foto-item anime"><img src="../assets/img/foto-28.jpg" alt="Photo 28" loading="lazy"></div>
-                    <div class="foto-item anime"><img src="../assets/img/foto-29.jpg" alt="Photo 29" loading="lazy"></div>
-                    <div class="foto-item anime"><img src="../assets/img/foto-30.jpg" alt="Photo 30" loading="lazy"></div>
+                    <div class="foto-item anime"><img src="../assets/img/foto-1.jpg" width="1333" height="2000" alt="Photo 1" loading="lazy"></div>
+                    <div class="foto-item anime"><img src="../assets/img/foto-2.jpg" width="1333" height="2000" alt="Photo 2" loading="lazy"></div>
+                    <div class="foto-item anime"><img src="../assets/img/foto-3.jpg" width="425" height="637" alt="Photo 3" loading="lazy"></div>
+                    <div class="foto-item anime"><img src="../assets/img/foto-4.jpg" width="2000" height="1334" alt="Photo 4" loading="lazy"></div>
+                    <div class="foto-item anime"><img src="../assets/img/foto-5.jpg" width="1425" height="950" alt="Photo 5" loading="lazy"></div>
+                    <div class="foto-item anime"><img src="../assets/img/foto-6.jpg" width="1333" height="2000" alt="Photo 6" loading="lazy"></div>
+                    <div class="foto-item anime"><img src="../assets/img/foto-7.jpg" width="1333" height="2000" alt="Photo 7" loading="lazy"></div>
+                    <div class="foto-item anime"><img src="../assets/img/foto-8.jpg" width="894" height="1341" alt="Photo 8" loading="lazy"></div>
+                    <div class="foto-item anime"><img src="../assets/img/foto-9.jpg" width="1334" height="2000" alt="Photo 9" loading="lazy"></div>
+                    <div class="foto-item anime"><img src="../assets/img/foto-10.jpg" width="1333" height="2000" alt="Photo 10" loading="lazy"></div>
+                    <div class="foto-item anime"><img src="../assets/img/foto-12.jpg" width="2000" height="1334" alt="Photo 12" loading="lazy"></div>
+                    <div class="foto-item anime"><img src="../assets/img/foto-13.jpg" width="1134" height="1701" alt="Photo 13" loading="lazy"></div>
+                    <div class="foto-item anime"><img src="../assets/img/foto-14.jpg" width="2000" height="1333" alt="Photo 14" loading="lazy"></div>
+                    <div class="foto-item anime"><img src="../assets/img/foto-15.jpg" width="1333" height="2000" alt="Photo 15" loading="lazy"></div>
+                    <div class="foto-item anime"><img src="../assets/img/foto-16.jpg" width="1333" height="2000" alt="Photo 16" loading="lazy"></div>
+                    <div class="foto-item anime"><img src="../assets/img/foto-17.jpg" width="1334" height="2000" alt="Photo 17" loading="lazy"></div>
+                    <div class="foto-item anime"><img src="../assets/img/foto-18.jpg" width="2000" height="1334" alt="Photo 18" loading="lazy"></div>
+                    <div class="foto-item anime"><img src="../assets/img/foto-19.jpg" width="1334" height="2000" alt="Photo 19" loading="lazy"></div>
+                    <div class="foto-item anime"><img src="../assets/img/foto-20.jpg" width="1333" height="2000" alt="Photo 20" loading="lazy"></div>
+                    <div class="foto-item anime"><img src="../assets/img/foto-21.jpg" width="1334" height="2000" alt="Photo 21" loading="lazy"></div>
+                    <div class="foto-item anime"><img src="../assets/img/foto-22.jpg" width="1334" height="2000" alt="Photo 22" loading="lazy"></div>
+                    <div class="foto-item anime"><img src="../assets/img/foto-23.jpg" width="1333" height="2000" alt="Photo 23" loading="lazy"></div>
+                    <div class="foto-item anime"><img src="../assets/img/foto-24.jpg" width="1333" height="2000" alt="Photo 24" loading="lazy"></div>
+                    <div class="foto-item anime"><img src="../assets/img/foto-25.jpg" width="1333" height="2000" alt="Photo 25" loading="lazy"></div>
+                    <div class="foto-item anime"><img src="../assets/img/foto-26.jpg" width="886" height="1329" alt="Photo 26" loading="lazy"></div>
+                    <div class="foto-item anime"><img src="../assets/img/foto-27.jpg" width="1334" height="2000" alt="Photo 27" loading="lazy"></div>
+                    <div class="foto-item anime"><img src="../assets/img/foto-28.jpg" width="1334" height="2000" alt="Photo 28" loading="lazy"></div>
+                    <div class="foto-item anime"><img src="../assets/img/foto-29.jpg" width="1333" height="2000" alt="Photo 29" loading="lazy"></div>
+                    <div class="foto-item anime"><img src="../assets/img/foto-30.jpg" width="1333" height="2000" alt="Photo 30" loading="lazy"></div>
                 </div>
             </div>
         </section>
@@ -1098,10 +1130,19 @@
                             <input type="date" id="date" name="date">
                         </div>
                         <div class="form-group">
+                            <label for="location">Wedding venue</label>
+                            <input type="text" id="location" name="location" placeholder="Town or venue">
+                        </div>
+                        <div class="form-group">
                             <label for="message">Message</label>
                             <textarea id="message" name="message" rows="4" placeholder="Tell us about your wedding…"></textarea>
                         </div>
+                        <div class="form-group">
+                            <label for="special">Special request</label>
+                            <input type="text" id="special" name="special" placeholder="e.g. drone, specific shot, timeline…">
+                        </div>
                         <button type="submit" class="form-submit">Send</button>
+                        <div id="form-status" class="form-status" role="status" aria-live="polite"></div>
                     </form>
                 </div>
             </div>
@@ -1208,7 +1249,8 @@
                 var target = document.getElementById(id);
                 if (target)
                 {
-                    window.scrollTo({ top: target.offsetTop - 64, behavior: 'smooth' });
+                    var top = target.getBoundingClientRect().top + window.pageYOffset - 64;
+                    window.scrollTo({ top: top, behavior: 'smooth' });
                 }
             });
         });
@@ -1292,10 +1334,45 @@
         var form = document.querySelector('.contact-form');
         if (form)
         {
-            form.addEventListener('submit', function ()
+            var formStatus = document.getElementById('form-status');
+            form.addEventListener('submit', function (e)
             {
+                e.preventDefault();
                 var btn = form.querySelector('.form-submit');
-                if (btn) { btn.textContent = 'Sending…'; btn.style.opacity = '0.7'; btn.style.pointerEvents = 'none'; }
+                var label = btn ? btn.textContent : '';
+                if (btn) { btn.textContent = 'Sending…'; btn.disabled = true; btn.style.opacity = '0.7'; }
+                if (formStatus) { formStatus.textContent = ''; formStatus.className = 'form-status'; }
+                fetch(form.action, {
+                    method: 'POST',
+                    body: new FormData(form),
+                    headers: { 'Accept': 'application/json' }
+                })
+                .then(function (res)
+                {
+                    if (res.ok)
+                    {
+                        form.reset();
+                        if (formStatus) { formStatus.textContent = 'Thank you! Your message has been sent — we'll get back to you soon.'; formStatus.className = 'form-status success'; }
+                    }
+                    else
+                    {
+                        return res.json().then(function (data)
+                        {
+                            var msg = (data && data.errors && data.errors.length)
+                                ? data.errors.map(function (er) { return er.message; }).join(', ')
+                                : 'Something went wrong. Please try again, or email us at production@nmmnt.com.';
+                            if (formStatus) { formStatus.textContent = msg; formStatus.className = 'form-status error'; }
+                        });
+                    }
+                })
+                .catch(function ()
+                {
+                    if (formStatus) { formStatus.textContent = 'Something went wrong (network error). Please try again, or email production@nmmnt.com.'; formStatus.className = 'form-status error'; }
+                })
+                .then(function ()
+                {
+                    if (btn) { btn.textContent = label || 'Send'; btn.disabled = false; btn.style.opacity = ''; }
+                });
             });
         }
         /* ---- Vimeo thumbnails auto-load ---- */
